@@ -1,2 +1,2 @@
 # fo
-Funktio-ohjelmointikurssin repo
+Funktio-ohjelmointikurssin repo. Olli Virkki

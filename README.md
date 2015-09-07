@@ -1,0 +1,2 @@
+# fo
+Funktio-ohjelmointikurssin repo

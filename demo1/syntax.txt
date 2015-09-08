@@ -1,0 +1,30 @@
+1.
+1*2+4/5-5
+Principal op: /
+Arguments: 4 & 5
+/:llä on korkein prioriteetti
+
+2.
+sum x:xs
+Principal op: :
+Arguments: sum x & xs
+Kuten tekstissä, "the principal operator in sum debits++credits is ++. "
+
+3.
+sum (x:xs)
+Principal op: Function app, aka $
+Arguments: sum & (x:xs)
+Kuten tekstissä, yllä olevan esimerkin jälkeen.
+
+4.
+atan2 pi/12 pi/45
+Principal op: /
+Arguments: atan2 pi & 12
+ghci antaa errorin. Jakolasku jakaa lauseen kahteen osaan, "atan2 pi" ja "12 pi/45". atan2 saa tässä vain yhden argumentin ja oikea puoli ei ole numero.
+
+5.
+if isPrime 23223 then atan pi/12 pi/45 else 0
+Principal op: if (then else)
+Arguments: isPrime 23223
+iffin sisältö katsotaan aina ensimmäisenä. Ehtolauseissa ehdon perusteella tulkitaan, kumpi vaihtoehdoista toteutetaan. Tämä antaa myös errorin, sillä "atan pi/12 pi/45" ei ole korrekti: sulkujen kanssa siinä lukee (atan pi)/12 (pi/45), joka ei ole luku keskellä olevan välin ' ' takia.
+

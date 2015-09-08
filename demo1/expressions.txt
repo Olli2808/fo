@@ -1,0 +1,39 @@
+a) areaOfBigCircle
+
+pi * 10 ** 2
+== {- Oletetaan Haskellin laskevan potenssit ensin -}
+pi * 100
+== {- Pii oli t‰h‰n menness‰ symboli, nyt sill‰ lasketaan -}
+3.14159 * 100
+== {- Suora lasku -}
+314.159
+
+b) enthusiasticGreeting
+
+greeting ++ "!"
+== {- Haetaan greetingin sis‰ltˆ -}
+("Hello " ++ "Jill") ++ "!"
+== {- Yhdistet‰‰n viimeisimm‰ksi tuodut stringinp‰tk‰t -}
+"Hello Jill" ++ "!"
+== {- Sitten seuraavat -}
+"Hello Jill!"
+
+c) 
+allTrue [True,True,False]
+== {- Haetaan allTruen m‰‰ritelm‰ -}
+foldr bothTrue True [True,True,False]
+== {- foldr ottaa kolme argumenttia. Nyt j‰lkimm‰inen lista ei ole tyhj‰: k‰ytet‰‰n m‰‰ritelm‰n toista osaa ja ollaan tarkkoja mihin kukin argumentti menee -}
+bothTrue True (foldr bothTrue True [True,False])
+== {- Sulut ensin. J‰lleen foldr:n toinen m‰‰ritelm‰ -}
+bothTrue True (bothTrue True (foldr bothTrue True [False]))
+== {- Sama jatkuu -}
+bothTrue True (bothTrue True (bothTrue False (foldr bothTrue True [])))
+== {- Nyt foldr'n argumentin taulukko on tyhj‰, k‰ytet‰‰n ensimm‰ist‰ m‰‰ritelm‰‰ -}
+bothTrue True (bothTrue True (bothTrue False (True)))
+== {- Sisimmist‰ suluista aloittaen bothTruen m‰‰ritelm‰ll‰ -}
+bothTrue True (bothTrue True (False))
+== {- bothTrue True False ei ole sama kuin bothTrue True True, joten vastaus myˆs on False -}
+bothTrue True (False)
+== {- Viel‰ viimeinen. Kuten n‰hd‰‰n, kaikki taulukon alkiot eiv‰t olleet True. -}
+False
+
